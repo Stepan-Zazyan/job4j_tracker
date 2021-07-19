@@ -11,14 +11,20 @@ public class Library {
         array[1] = sam;
         array[2] = gendalf;
         array[3] = cleanCode;
-        for (int i = 0; i < array.length; i++) {
-            Book obj = array[i];
+        for (Book obj : array) {
             System.out.println(obj.getName() + " " + obj.getPages());
         }
         System.out.println();
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].getName().equals("Clean code Book")) {
-                System.out.println(array[i].getName() + " " + array[i].getPages());
+        Book tmp = array[0];
+        array[0] = array[3];
+        array[3] = tmp;
+        for (Book book : array) {
+            System.out.println(book.getName() + " " + book.getPages());
+        }
+        System.out.println();
+        for (Book obj: array) {
+            if ("Clean code Book".equals(obj.getName())) {
+                System.out.println(obj.getName() + " " + obj.getPages());
             }
         }
     }
