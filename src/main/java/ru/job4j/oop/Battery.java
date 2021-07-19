@@ -5,6 +5,7 @@ public class Battery {
     private int load;
 
     public Battery(int loadValue) {
+
         this.load = loadValue;
     }
 
