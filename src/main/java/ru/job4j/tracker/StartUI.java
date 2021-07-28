@@ -5,13 +5,14 @@ import java.time.format.DateTimeFormatter;
 
 public class StartUI {
     public static void main(String[] args) {
-        Item obj = new Item(LocalDateTime.now());
-        LocalDateTime local = obj.getCreated();
-        System.out.println("Текущие дата и время до форматирования: " +local);
+            Item obj = new Item(LocalDateTime.now());
+            LocalDateTime local = obj.getCreated();
+            System.out.println("Текущие дата и время до форматирования: " +local);
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String currentDateTimeFormat = local.format(formatter);
-        System.out.println("Текущие дата и время после форматирования: " + currentDateTimeFormat);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+            String currentDateTimeFormat = local.format(formatter);
+            System.out.println("Текущие дата и время после форматирования: " + currentDateTimeFormat);
+            Item objectino = new Item(3, "Cool", LocalDateTime.now());
+            System.out.println(objectino);
     }
-
 }
