@@ -10,7 +10,7 @@ public class ElementNotFoundException extends Exception {
                 break;
             }
         }
-          if (rsl == -1) {
+           if (rsl == -1) {
             throw new ElementNotFoundException();
         }
 
