@@ -8,10 +8,12 @@ public class ElementNotFoundException extends Exception {
             if (value[i].equals(key)) {
                 rsl = i;
                 break;
-            } else if (rsl == -1) {
-                throw new ElementNotFoundException();
-                }
+            }
         }
+        if (rsl == -1) {
+            throw new ElementNotFoundException();
+        }
+
     }
 
     public static void main(String[] args) {
