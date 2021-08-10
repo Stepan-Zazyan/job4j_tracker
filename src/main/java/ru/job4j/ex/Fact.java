@@ -7,7 +7,7 @@ public class Fact {
     }
 
     public static int calc(int n) {
-        if (n<0){
+        if (n < 0) {
             throw new java.lang.IllegalArgumentException("Введен неверный параметр");
         }
         int rsl = 1;

@@ -1,7 +1,5 @@
 package ru.job4j.ex;
 
-import java.util.Objects;
-
 public class ElementNotFoundException extends Exception {
 
     public static void indexOf(String[] value, String key) throws ElementNotFoundException {
