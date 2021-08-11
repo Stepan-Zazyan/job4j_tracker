@@ -4,11 +4,11 @@ public class UserStore {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
         for (User user : users) {
-            if (user == null) {
-                throw new UserNotFoundException("Пользователя не найдено");
+            if (user.getUsername().equals(login)) {
+                return user;
             }
         }
-        return new User(login);
+        throw new UserNotFoundException("Пользователя не найдено");
     }
 
     public static boolean validate(User user) throws UserInvalidException {
@@ -27,9 +27,9 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (UserNotFoundException en) {
-            en.printStackTrace();
-        } catch (Exception e) {
+        } catch (UserInvalidException e) {
+            e.printStackTrace();
+        } catch (UserNotFoundException e) {
             e.printStackTrace();
         }
     }
