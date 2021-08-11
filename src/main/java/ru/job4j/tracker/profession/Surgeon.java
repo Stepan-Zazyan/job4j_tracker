@@ -1,6 +1,8 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.profession;
 
-public class Surgeon extends Doctor{
+import ru.job4j.tracker.profession.Doctor;
+
+public class Surgeon extends Doctor {
 
     private String cut;
 

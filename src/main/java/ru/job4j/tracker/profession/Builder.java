@@ -1,6 +1,6 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.profession;
 
-public class Builder extends Engineer{
+public class Builder extends Engineer {
 
     private  String build;
 
