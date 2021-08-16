@@ -1,9 +1,6 @@
 package ru.job4j.tracker;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Arrays;
-import java.util.Objects;
 
 public class Tracker {
     private final Item[] items = new Item[100];
