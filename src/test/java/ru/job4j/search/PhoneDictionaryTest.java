@@ -25,7 +25,6 @@ public class PhoneDictionaryTest {
                 new Person("Petr", "Arsentev", "534872", "Bryansk")
         );
         ArrayList<Person> persons = phones.find("11");
-        persons.clear();
         assertThat(persons.size(), is(0));
     }
 }
