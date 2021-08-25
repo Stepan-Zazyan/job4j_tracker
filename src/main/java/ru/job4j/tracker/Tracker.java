@@ -45,7 +45,7 @@ public class Tracker {
                 count++;
             }
         }
-        return Arrays.copyOf(keyName,count);
+        return Arrays.copyOf(keyName, count);
     }
 
     private int indexOf(int id) {
@@ -64,7 +64,7 @@ public class Tracker {
         boolean rsl = index != -1;
         if (rsl) {
             item.setId(id);
-            items.add(item);/*items[index] = item;*/
+            items.set(id - 1, item);/*items[index] = item;*/
         }
         return rsl;
     }
@@ -73,7 +73,7 @@ public class Tracker {
         int index = indexOf(id);
         boolean rsl = index != -1;
         if (rsl) {
-            System.arraycopy(items, index+1, items, index, size - index -1);
+            items.remove(id-1);
             /*items[size-1] = null;*/
             size--;
         }
