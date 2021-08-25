@@ -6,14 +6,10 @@ import java.util.List;
 public class ConvertMatrix2List {
     public List<Integer> toList(int[][] array) {
         List<Integer> list = new ArrayList<>();
-        int stroka = 0, stolbec = 0;
         for (int[] row : array) {
             for (int cell : row) {
-                list.add(array[stroka][stolbec]);
-                stolbec++;
+                list.add(cell);
             }
-            stolbec = 0;
-            stroka++;
         }
         return list;
     }
