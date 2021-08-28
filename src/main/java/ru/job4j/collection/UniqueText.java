@@ -8,11 +8,32 @@ public class UniqueText {
         boolean rsl = true;
         String[] origin = originText.split(" ");
         String[] text = duplicateText.split(" ");
-        HashSet<String> originCheck = new HashSet<>(Arrays.asList(origin));
-        HashSet<String> textCheck = new HashSet<>(Arrays.asList(text));
-        for (String s: originCheck) {
-            rsl = textCheck.contains(s);
+        HashSet<String> originCheck = new HashSet<>();
+        for (String s: origin) {
+            originCheck.add(s);
+        } ;
+        for (String s : text) {
+            if (!originCheck.contains(s)) {
+                rsl = false;
+            }
         }
         return rsl;
     }
 }
+
+/*
+    В HashSet надо переводить только первый массив
+
+        и делайте это в цикле for-each
+
+        Второй массив перебирайте в цикле for-each
+
+        for (String s : text) {
+
+        и внутри будет проверка
+
+        if (!originCheck.contains(s)) {
+
+        и внутри строка
+
+        return false*/
