@@ -31,6 +31,8 @@ public class SingleTracker {
         return tracker.findByName(key);
     }
 
+    public List<Item> findAll() {return tracker.findAll();}
+
     public boolean replace(int id, Item item) {
         return tracker.replace(id, item);
     }
