@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Tracker {
@@ -52,6 +53,16 @@ public class Tracker {
             items.set(index, item);
         }
         return rsl;
+    }
+
+    public List<Item> sortUp (List<Item> items) {
+        Collections.sort(items);
+        return items;
+    }
+
+    public List<Item> sortDown (List<Item> items) {
+        Collections.sort(items, Collections.reverseOrder());
+        return items;
     }
 
     public boolean delete(int id) {

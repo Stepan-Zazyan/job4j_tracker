@@ -2,10 +2,9 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
-
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.*;
 
 public class TrackerTest {
@@ -35,7 +34,7 @@ public class TrackerTest {
         Item second = new Item("Second");
         tracker.add(first);
         tracker.add(second);
-        Item result = tracker.findAll().get(0)/*[0]*/;
+        Item result = tracker.findAll().get(0);
         assertThat(result.getName(), is(first.getName()));
     }
 
@@ -89,5 +88,37 @@ public class TrackerTest {
         int id = bug.getId();
         tracker.delete(id);
         assertEquals(bug.getName(), "Bug");
+    }
+
+    @Test
+    public  void whenSortUp() {
+        Tracker tracker = new Tracker();
+        List<Item> items = Arrays.asList(
+                new Item(2,"AAA"),
+                new Item(1,"BBB"),
+                new Item(3,"CCC")
+        );
+        List<Item> expected = Arrays.asList(
+                new Item(1,"BBB"),
+                new Item(2,"AAA"),
+                new Item(3,"CCC")
+        );
+        assertThat(tracker.sortUp(items),is(expected));
+    }
+
+    @Test
+    public  void whenSortDown() {
+        Tracker tracker = new Tracker();
+        List<Item> items = Arrays.asList(
+                new Item(2,"AAA"),
+                new Item(1,"BBB"),
+                new Item(3,"CCC")
+        );
+        List<Item> expected = Arrays.asList(
+                new Item(3,"CCC"),
+                new Item(2,"AAA"),
+                new Item(1,"BBB")
+        );
+        assertThat(tracker.sortDown(items),is(expected));
     }
 }
