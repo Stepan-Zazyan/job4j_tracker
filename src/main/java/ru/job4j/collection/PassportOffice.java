@@ -8,8 +8,12 @@ public class PassportOffice {
     private Map<String, Citizen> citizens = new HashMap<>();
 
     public boolean add(Citizen citizen) {
-        return citizens.put(citizen.getPassport(), citizen)
-                == citizens.putIfAbsent(citizen.getPassport(), citizen);
+        boolean rsl = false;
+        if (!citizens.containsKey(citizen.getPassport())) {
+            citizens.put(citizen.getPassport(), citizen);
+            rsl = true;
+        }
+        return rsl;
     }
     /*Сервис должен проверять, что гражданина с таким паспортом еще нет, а так же возможность получить информацию о гражданине по его паспорту.
 
