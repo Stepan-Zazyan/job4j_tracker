@@ -1,8 +1,10 @@
 package ru.job4j.tracker;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
@@ -92,7 +94,6 @@ public class TrackerTest {
 
     @Test
     public  void whenSortUp() {
-        Tracker tracker = new Tracker();
         List<Item> items = Arrays.asList(
                 new Item(2,"AAA"),
                 new Item(1,"BBB"),
@@ -103,7 +104,8 @@ public class TrackerTest {
                 new Item(2,"AAA"),
                 new Item(3,"CCC")
         );
-        assertThat(tracker.sortUp(items),is(expected));
+        Collections.sort(items);
+        assertThat(items, is(expected));
     }
 
     @Test
@@ -119,6 +121,8 @@ public class TrackerTest {
                 new Item(2,"AAA"),
                 new Item(1,"BBB")
         );
-        assertThat(tracker.sortDown(items),is(expected));
+        Collections.sort(items, Collections.reverseOrder());
+        assertThat(items, is(expected));
+
     }
 }

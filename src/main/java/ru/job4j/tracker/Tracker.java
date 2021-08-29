@@ -55,7 +55,7 @@ public class Tracker {
         return rsl;
     }
 
-    public List<Item> sortUp (List<Item> items) {
+/*    public List<Item> sortUp (List<Item> items) {
         Collections.sort(items);
         return items;
     }
@@ -63,7 +63,7 @@ public class Tracker {
     public List<Item> sortDown (List<Item> items) {
         Collections.sort(items, Collections.reverseOrder());
         return items;
-    }
+    }*/
 
     public boolean delete(int id) {
         int index = indexOf(id);
