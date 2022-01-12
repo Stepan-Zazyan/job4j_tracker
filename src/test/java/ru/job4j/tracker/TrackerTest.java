@@ -121,8 +121,7 @@ public class TrackerTest {
                 new Item(2,"AAA"),
                 new Item(1,"BBB")
         );
-        Collections.sort(items, Collections.reverseOrder());
+        items.sort(Collections.reverseOrder());
         assertThat(items, is(expected));
-
     }
 }
