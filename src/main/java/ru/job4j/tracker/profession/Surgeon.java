@@ -6,7 +6,8 @@ public class Surgeon extends Doctor {
 
     private String cut;
 
-    public Surgeon(String cut, String cure, String name, String surname, String education, String birthday) {
+    public Surgeon(String cut, String cure, String name, String surname,
+                   String education, String birthday) {
         super(cure, name, surname, education, birthday);
         this.cut = cut;
     }

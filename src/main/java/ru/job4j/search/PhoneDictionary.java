@@ -1,8 +1,5 @@
 package ru.job4j.search;
 
-
-import ru.job4j.tracker.StubOutput;
-
 import java.util.ArrayList;
 
 public class PhoneDictionary {
@@ -14,8 +11,10 @@ public class PhoneDictionary {
 
     @Override
     public String toString() {
-        return "PhoneDictionary {" +
-                "persons = " + persons +
+        return "PhoneDictionary {"
+                +
+                "persons = " + persons
+                +
                 '}';
     }
 
@@ -29,10 +28,12 @@ public class PhoneDictionary {
         System.out.println(man);
         System.out.println(list);
     }
+
     public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
-            if (person.getName().contains(key) || person.getSurname().contains(key) ||
+            if (person.getName().contains(key) || person.getSurname().contains(key)
+                    ||
                     person.getPhone().contains(key) || person.getAddress().contains(key)) {
                 result.add(person);
             }

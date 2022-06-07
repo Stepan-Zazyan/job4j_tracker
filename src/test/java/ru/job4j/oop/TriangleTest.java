@@ -18,10 +18,10 @@ public class TriangleTest {
     }
 
 @Test
-    public void NonTriangle() {
-        Point a = new Point(0,100);
-        Point b = new Point(1,100);
-        Point c = new Point(0,100);
+    public void nonTriangle() {
+        Point a = new Point(0, 100);
+        Point b = new Point(1, 100);
+        Point c = new Point(0, 100);
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
         assertThat(rsl, closeTo(-1, 0.001));

@@ -25,6 +25,7 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator num = new Calculator();
-        System.out.println(sum(5) + " " + minus(5) + " " + num.divide(5) + " " + num.multiply(5) + " " + num.sumAllOperation(5));
+        System.out.println(sum(5) + " " + minus(5) + " " + num.divide(5) + " "
+                + num.multiply(5) + " " + num.sumAllOperation(5));
     }
 }

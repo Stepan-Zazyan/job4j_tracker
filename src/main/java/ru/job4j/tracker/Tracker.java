@@ -28,8 +28,7 @@ public class Tracker {
         for (Item item : items) {
             if (item.getName().equals(key)) {
                 keyName.add(item);
-                ;
-            }
+                            }
         }
         return keyName;
     }

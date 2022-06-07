@@ -10,6 +10,7 @@ public class User {
         this.username = username;
         this.password = password;
     }
+
     public int getId() {
         return id;
     }
@@ -24,10 +25,14 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+        return "User{"
+                +
+                "id=" + id
+                +
+                ", username='" + username + '\''
+                +
+                ", password='" + password + '\''
+                +
                 '}';
     }
 }

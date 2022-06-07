@@ -1,6 +1,5 @@
 package ru.job4j.tracker;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -95,14 +94,14 @@ public class TrackerTest {
     @Test
     public  void whenSortUp() {
         List<Item> items = Arrays.asList(
-                new Item(2,"AAA"),
-                new Item(1,"BBB"),
-                new Item(3,"CCC")
+                new Item(2, "AAA"),
+                new Item(1, "BBB"),
+                new Item(3, "CCC")
         );
         List<Item> expected = Arrays.asList(
-                new Item(1,"BBB"),
-                new Item(2,"AAA"),
-                new Item(3,"CCC")
+                new Item(1, "BBB"),
+                new Item(2, "AAA"),
+                new Item(3, "CCC")
         );
         Collections.sort(items);
         assertThat(items, is(expected));
@@ -112,14 +111,14 @@ public class TrackerTest {
     public  void whenSortDown() {
         Tracker tracker = new Tracker();
         List<Item> items = Arrays.asList(
-                new Item(2,"AAA"),
-                new Item(1,"BBB"),
-                new Item(3,"CCC")
+                new Item(2, "AAA"),
+                new Item(1, "BBB"),
+                new Item(3, "CCC")
         );
         List<Item> expected = Arrays.asList(
-                new Item(3,"CCC"),
-                new Item(2,"AAA"),
-                new Item(1,"BBB")
+                new Item(3, "CCC"),
+                new Item(2, "AAA"),
+                new Item(1, "BBB")
         );
         items.sort(Collections.reverseOrder());
         assertThat(items, is(expected));

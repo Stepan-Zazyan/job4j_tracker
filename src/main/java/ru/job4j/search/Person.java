@@ -10,16 +10,21 @@ public class Person {
         this.name = name;
         this.surname = surname;
         this.phone = phone;
-        this.address= address;
+        this.address = address;
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
+        return "Person{"
+                +
+                "name='" + name + '\''
+                +
+                ", surname='" + surname + '\''
+                +
+                ", phone='" + phone + '\''
+                +
+                ", address='" + address + '\''
+                +
                 '}';
     }
 

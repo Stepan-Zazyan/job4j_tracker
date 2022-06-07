@@ -22,7 +22,6 @@ public class BankService {
         }
     }
 
-
     public User findByPassport(String passport) {
         User user = null;
         for (User s : users.keySet()) {

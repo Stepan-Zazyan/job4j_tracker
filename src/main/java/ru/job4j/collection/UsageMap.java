@@ -8,7 +8,7 @@ public class UsageMap {
         HashMap<String, String> testcoll = new HashMap<>();
         testcoll.put("stepanzazyan@yandex.ru", "Stepan Sem");
         testcoll.put("stepanzazyan@gmail.com", "Victor Step");
-        for (Map.Entry<String, String> key: testcoll.entrySet()) {
+        for (Map.Entry<String, String> key : testcoll.entrySet()) {
             System.out.println(key.getKey() + " " + key.getValue());
         }
     }

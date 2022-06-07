@@ -9,7 +9,7 @@ public class College {
         student.setName("Иван");
         student.setGroup(123);
         student.setDate(LocalDateTime.now());
-        System.out.println(student.getName() + " из группы " + student.getGroup() +
-                " зачислен " + student.getDate());
+        System.out.println(student.getName() + " из группы " + student.getGroup()
+                +                " зачислен " + student.getDate());
     }
 }
