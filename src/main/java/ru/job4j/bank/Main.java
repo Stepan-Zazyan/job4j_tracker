@@ -5,7 +5,9 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        //Пишем объекты
+        /**
+        *Пишем объекты
+         */
         List<Account> accountListStepan = new ArrayList<>();
         List<Account> accountListPetya = new ArrayList<>();
         Account accountOne = new Account("реквизиты 1", 111.11);
@@ -20,7 +22,9 @@ public class Main {
         User petya = new User("passport Petya", "name Petya");
         Map<User, List<Account>> users = new HashMap<>();
 
-        //Манипуляции с объектами
+        /**
+         *Манипуляции с объектами
+         * */
         users.put(stepan, accountListStepan);
         System.out.println(users.values());
         users.putIfAbsent(stepan, accountListPetya);
