@@ -93,33 +93,22 @@ public class TrackerTest {
 
     @Test
     public  void whenSortUp() {
-        List<Item> items = Arrays.asList(
-                new Item(2, "AAA"),
-                new Item(1, "BBB"),
-                new Item(3, "CCC")
-        );
-        List<Item> expected = Arrays.asList(
-                new Item(1, "BBB"),
-                new Item(2, "AAA"),
-                new Item(3, "CCC")
-        );
+        Item item1 = new Item(1, "BBB");
+        Item item2 = new Item(2, "AAA");
+        Item item3 = new Item(3, "CCC");
+        List<Item> items = Arrays.asList(item2, item1, item3);
+        List<Item> expected = List.of(item1, item2, item3);
         Collections.sort(items);
         assertThat(items, is(expected));
     }
 
     @Test
     public  void whenSortDown() {
-        Tracker tracker = new Tracker();
-        List<Item> items = Arrays.asList(
-                new Item(2, "AAA"),
-                new Item(1, "BBB"),
-                new Item(3, "CCC")
-        );
-        List<Item> expected = Arrays.asList(
-                new Item(3, "CCC"),
-                new Item(2, "AAA"),
-                new Item(1, "BBB")
-        );
+        Item item1 = new Item(1, "BBB");
+        Item item2 = new Item(2, "AAA");
+        Item item3 = new Item(3, "CCC");
+        List<Item> items = Arrays.asList(item2, item1, item3);
+        List<Item> expected = List.of(item3, item2, item1);
         items.sort(Collections.reverseOrder());
         assertThat(items, is(expected));
     }
