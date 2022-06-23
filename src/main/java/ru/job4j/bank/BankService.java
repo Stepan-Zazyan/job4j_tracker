@@ -12,15 +12,10 @@ public class BankService {
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null) {
-            for (Account x : users.get(user)) {
-                if (Objects.equals(x.getRequisite(), account.getRequisite())) {
-                    System.out.println("аккаунт уже существует");
-                    break;
-                }
+            List<Account> list = users.get(user);
+            if (!list.contains(user)) {
+                list.add(account);
             }
-            users.get(user).add(account);
-        } else {
-            System.out.println("пользователя не существует");
         }
     }
 
@@ -47,23 +42,14 @@ public class BankService {
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
-        User srcUser = findByPassport(srcPassport);
-        if (srcUser == null) {
-            System.out.println("Данные паспорта исходного пользователя не верны");
-            return false;
-        }
-        User destUser = findByPassport(destPassport);
-        if (destUser == null) {
-            System.out.println("Данные паспорта пользователя для перевода не верны");
-            return false;
-        }
+        boolean rsl = false;
         Account srcAccount = findByRequisite(srcPassport, srcRequisite);
         Account destAccount = findByRequisite(destPassport, destRequisite);
         if (srcAccount != null && destAccount != null && srcAccount.getBalance() >= amount) {
             srcAccount.setBalance(srcAccount.getBalance() - amount);
             destAccount.setBalance(destAccount.getBalance() + amount);
+            rsl = true;
         }
-        boolean rsl = false;
         return rsl;
     }
 }
