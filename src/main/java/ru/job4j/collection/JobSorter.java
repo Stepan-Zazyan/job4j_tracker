@@ -14,9 +14,9 @@ public class JobSorter {
                 new Job("X task", 0)
         );
         Comparator<Job> comb =
-                new JobDescByNameUp().thenComparing(new JobDescByPriorityUp()).
-                        thenComparing(new JobDescByNameDown().
-                                thenComparing(new JobDescByPriorityDown()));
+                new JobByNameIncrease().thenComparing(new JobByPriorityIncrease()).
+                        thenComparing(new JobByNameDesc().
+                                thenComparing(new JobByPriorityDesc()));
         Collections.sort(jobs, comb);
         System.out.println(jobs);
     }
