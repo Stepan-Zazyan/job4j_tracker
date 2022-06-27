@@ -10,7 +10,7 @@ public class BankService {
 
     /**
      *Этот метод должен добавить пользователя в систему
-     * @param user
+     * @param user Принимает параметр user
      */
     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<Account>());
@@ -18,8 +18,8 @@ public class BankService {
 
     /**
      *метод должен добавить новый счет к пользователю
-     * @param passport
-     * @param account
+     * @param passport Принимает String параметр паспорт
+     * @param account  Принимает String параметр аккаунт
      */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
@@ -33,8 +33,8 @@ public class BankService {
 
     /**
      *метод ищет пользователя по номеру паспорта:
-     * @param passport
-     * @return
+     * @param passport Принимает String параметр паспорт
+     * @return Возвращает объект user, или null в случае его отсутствия
      */
     public User findByPassport(String passport) {
         for (User x : users.keySet()) {
@@ -47,9 +47,9 @@ public class BankService {
 
     /**
      *метод ищет счет пользователя по реквизитам
-     * @param passport
-     * @param requisite
-     * @return
+     * @param passport Принимает String параметр паспорт
+     * @param requisite Принимает String параметр реквизиты
+     * @return Возвращает реквизиты пользователя или null, если пользователя не существует
      */
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
@@ -65,12 +65,13 @@ public class BankService {
 
     /**
      *метод предназначен для перечисления денег с одного счёта на другой счёт
-     * @param srcPassport
-     * @param srcRequisite
-     * @param destPassport
-     * @param destRequisite
-     * @param amount
-     * @return
+     * @param srcPassport Принимает String параметр паспорт отправителя
+     * @param srcRequisite Принимает String параметр реквизиты отправителя
+     * @param destPassport Принимает String параметр паспорт получателя
+     * @param destRequisite Принимает String параметр реквизиты получателя
+     * @param amount Принимет double сумму перевода
+     * @return Возвращает значение true в случае успешного перевода
+     * и false, если перевод не был сделан
      */
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
