@@ -16,11 +16,10 @@ public class AttachmentSort {
             public int compare(Object o, Object t1) {
                 Attachment left = (Attachment) o;
                 Attachment right = (Attachment) t1;
-                return Integer.compare(left.getSize(), right.getSize());
+                return left.getName().compareTo(right.getName());
             }
         };
         attachments.sort(comparator);
         System.out.println(attachments);
-        // Здесь создайте компаратор на основании анонимного класса.
     }
 }
