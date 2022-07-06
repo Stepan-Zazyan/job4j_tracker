@@ -29,10 +29,8 @@ public class FunctionalInterfaces {
         Consumer<String> con = (s) -> System.out.println(s);
         Function<String, String> func = (t) -> t.toUpperCase();
         for (String s : sup.get()) {
-            con.accept(func.apply(s));
-               /* Заменить вывод строк на применение Consumer
-                Заменить преобразование строк к строкам в верхнем регистре с помощью Function
-                Необходимое объявлено выше, требуется их реализовать.*/
+            func.apply(s);
+            con.accept(s);
         }
     }
 }
