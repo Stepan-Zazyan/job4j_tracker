@@ -8,7 +8,6 @@ import java.util.List;
 public class DepDescComp implements Comparator<String> {
     @Override
     public int compare(String o1, String o2) {
-
         List<String> oo1 = new ArrayList<>(Arrays.asList(o1.split("/")));
         List<String> oo2 = new ArrayList<>(Arrays.asList(o2.split("/")));
         for (int i = 0; i < Math.min(oo1.size(), oo2.size()); i++) {
@@ -19,5 +18,6 @@ public class DepDescComp implements Comparator<String> {
             }
         }
         return Integer.compare(o1.length(), o2.length());
+
     }
 }
