@@ -13,14 +13,6 @@ public class StreamUsage {
             this.name = name;
             this.spent = spent;
         }
-
-        public String getName() {
-            return name;
-        }
-
-        public long getSpent() {
-            return spent;
-        }
     }
 
     public static void main(String[] args) {
