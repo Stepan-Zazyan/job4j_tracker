@@ -22,8 +22,8 @@ public class PhoneDictionary {
 
     public static void main(String[] args) {
         PhoneDictionary list = new PhoneDictionary();
-        Person man = new Person("Petr", "jk", "hj", "t");
-        Person woman = new Person("Anna", "jk", "hj", "t");
+        var man = new Person("Petr", "jk", "hj", "t");
+        var woman = new Person("Anna", "jk", "hj", "t");
         list.add(man);
         list.add(woman);
         System.out.println(list.find("Petr"));
@@ -38,7 +38,7 @@ public class PhoneDictionary {
         Predicate<Person> predByAddress = (t) -> t.getAddress().contains(key);
         Predicate<Person> combine = predByName.or(predBySurname).or(predByPhone).or(predByAddress);
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }

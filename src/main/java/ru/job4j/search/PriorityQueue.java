@@ -6,6 +6,7 @@ import java.util.LinkedList;
 /**
  * Класс описывает работу простейшей очереди по приоритету, которая работает
  * по принципу FIFO (first in - first out)
+ *
  * @author STEPAN ZAZYAN
  * @version 2.0
  */
@@ -20,8 +21,8 @@ public class PriorityQueue {
      * @param task задача
      */
     public void put(Task task) {
-        int index = 0;
-        for (Task element : tasks) {
+        var index = 0;
+        for (var element : tasks) {
             if (element.getPriority() > task.getPriority()) {
                 break;
             }
@@ -32,6 +33,7 @@ public class PriorityQueue {
 
     /**
      * Метод позволяет получить первую задачу в очереди
+     *
      * @return возвращает задачу из головы очереди или null если очередь пуста
      */
     public Task take() {
