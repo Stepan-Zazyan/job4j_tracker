@@ -13,7 +13,7 @@ public class TrainingClass {
         System.out.println("map:");
         integers.stream().
                 map(x -> x * 2).
-                forEach(System.out::print); // 2, 4, 6
+                forEach(System.out::print);
 
         List<Integer> integers2 = Arrays.asList(1, 2, 3);
         System.out.println();
