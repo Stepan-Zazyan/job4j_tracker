@@ -94,7 +94,7 @@ public class Car {
                 .buildModel("Mini")
                 .buildVolume(2.0)
                 .buildCreated(LocalDate.of(2021, 2, 3))
-                .buildColor("Grey")
+                .buildColor("Greey")
                 .build();
         System.out.println(myCar);
         System.out.println(car);
