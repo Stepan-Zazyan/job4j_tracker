@@ -19,7 +19,7 @@ public class TrainingClass {
         System.out.println();
         System.out.println("flatMap:");
         integers2.stream().
-                flatMap(x -> Stream.of(2, "a", 7, 6)).
+                flatMap(x -> Stream.of(3, "a", 7, 6)).
                 forEach(System.out::print);
 
         List<List<Integer>> listOfLists =
