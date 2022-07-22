@@ -23,11 +23,13 @@ public class TrainingClass {
                 flatMap(x -> Stream.of(2, "a", 7, 6)).
                 forEach(System.out::print);
 
-
-        List<List<Integer>> listOfLists = Arrays.asList(Arrays.asList(1,2,3), Arrays.asList(1,2,3), Arrays.asList(1,2,3));
-        List<Integer> listOflist=
+        List<List<Integer>> listOfLists =
+                Arrays.asList(Arrays.asList(1, 2, 3),
+                        Arrays.asList(1, 2, 3),
+                        Arrays.asList(1, 2, 3));
+        List<Integer> listOflist =
                 listOfLists.stream()
-                        .flatMap(integers1 -> integers1.stream())
+                        .flatMap(Collection::stream)
                         .collect(Collectors.toList());
         listOflist.forEach(System.out::println);
     }
