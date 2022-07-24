@@ -15,15 +15,9 @@ public class Card {
     }
 
     public static void main(String[] args) {
-/*        List<Suit> suits = Arrays.asList(Suit.values());
-        List<Value> values = Arrays.asList(Value.values());
-        Stream.of(suits)
-                .map(t->t.stream())
-                .flatMap(s -> Stream.of(values))
-                .map(k->k.stream())
-                .flatMap(l->new Card(t,k))
+        Stream.of(Suit.values())
+                .flatMap(s -> Stream.of(Value.values()).map(l -> new Card(s, l)))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
-    */
     }
 }
