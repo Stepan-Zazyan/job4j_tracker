@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Subject {
     private String name;
 
-    private double score;
+    private int score;
 
     public Subject(String name, int score) {
         this.name = name;
@@ -16,7 +16,7 @@ public class Subject {
         return name;
     }
 
-    public double getScore() {
+    public int getScore() {
         return score;
     }
 

@@ -5,16 +5,16 @@ import java.util.Objects;
 public class Label implements Comparable<Label> {
 
     private String name;
-    private double score;
+    private int score;
 
-    Label(String name, double score) {
+    Label(String name, int score) {
         this.name = name;
         this.score = score;
     }
 
     @Override
     public int compareTo(Label o) {
-        return Double.compare(this.score, o.score);
+        return Integer.compare(this.score, o.score);
     }
 
     public String getName() {
@@ -25,11 +25,11 @@ public class Label implements Comparable<Label> {
         this.name = name;
     }
 
-    public double getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(double score) {
+    public void setScore(int score) {
         this.score = score;
     }
 
@@ -42,7 +42,7 @@ public class Label implements Comparable<Label> {
             return false;
         }
         Label label = (Label) o;
-        return Double.compare(label.score, score) == 0 && Objects.equals(name, label.name);
+        return label.score == score && Objects.equals(name, label.name);
     }
 
     @Override

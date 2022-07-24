@@ -12,7 +12,7 @@ public class AttachmentSort {
                 new Attachment("image 2", 34),
                 new Attachment("image 3", 13)
         );
-        /*var comparator = new Comparator() {
+        Comparator comparator = new Comparator() {
             @Override
             public int compare(Object o, Object t1) {
                 Attachment left = (Attachment) o;
@@ -20,7 +20,7 @@ public class AttachmentSort {
                 return left.getName().compareTo(right.getName());
             }
         };
-        attachments.sort(comparator);*/
+        attachments.sort(comparator);
         System.out.println(attachments);
     }
 }
