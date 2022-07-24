@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class AnalyzeByMap {
     public static double averageScore(List<Pupil> pupils) {
-        return 0D;
+        return 0;
     }
 
     public static List<Label> averageScoreByPupil(List<Pupil> pupils) {
