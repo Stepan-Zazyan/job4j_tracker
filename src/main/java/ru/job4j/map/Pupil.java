@@ -45,4 +45,18 @@ public class Pupil {
     public int hashCode() {
         return Objects.hash(name, subjects);
     }
+
+    @Override
+    public String toString() {
+        return "Pupil{"
+                +
+                "name='"
+                + name
+                + '\''
+                +
+                ", subjects="
+                + subjects
+                +
+                '}';
+    }
 }
