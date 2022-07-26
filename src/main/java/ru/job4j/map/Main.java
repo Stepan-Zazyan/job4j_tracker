@@ -30,9 +30,6 @@ public class Main {
                 )
         );
         List<Label> label = new ArrayList<>();
-        int score4 = 0;
-        int score7 = 0;
-        int score11 = 0;
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.getSubjects()) {
                 map.putIfAbsent(subject.getName(), 0);
@@ -61,6 +58,7 @@ public class Main {
         checkMap.put("3", 3);
         System.out.println(checkMap);
         checkMap.put("3", checkMap.get("3") + 1);
+        checkMap.computeIfPresent("2", (t,u)-> u+2);
         System.out.println(checkMap);
     }
 }
