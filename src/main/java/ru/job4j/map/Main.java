@@ -58,7 +58,7 @@ public class Main {
         checkMap.put("3", 3);
         System.out.println(checkMap);
         checkMap.put("3", checkMap.get("3") + 1);
-        checkMap.computeIfPresent("2", (t,u)-> u+2);
+        checkMap.computeIfPresent("2", (t, u) -> u + 2);
         System.out.println(checkMap);
     }
 }
