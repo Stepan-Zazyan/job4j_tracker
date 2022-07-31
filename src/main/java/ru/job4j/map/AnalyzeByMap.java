@@ -68,11 +68,7 @@ public class AnalyzeByMap {
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.getSubjects()) {
                 map.putIfAbsent(subject.getName(), 0);
-                for (Map.Entry<String, Integer> x : map.entrySet()) {
-                    if (subject.getName().equals(x.getKey())) {
-                        map.put(x.getKey(), map.get(x.getKey()) + subject.getScore());
-                    }
-                }
+                map.computeIfPresent(subject.getName(), (t, u) -> u + subject.getScore());
             }
         }
         for (Map.Entry<String, Integer> x : map.entrySet()) {
