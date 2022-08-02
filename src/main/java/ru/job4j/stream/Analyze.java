@@ -1,7 +1,6 @@
 package ru.job4j.stream;
 
 import java.util.Comparator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.*;
@@ -10,7 +9,7 @@ public class Analyze {
     public static double averageScore(Stream<Pupil> stream) {
         return stream
                 .flatMap(s -> s.getSubjects().stream())
-                .mapToInt(s -> s.getScore())
+                .mapToInt(Subject::getScore)
                 .average()
                 .orElse(-1);
     }
@@ -27,8 +26,8 @@ public class Analyze {
     public static List<Tuple> averageScoreBySubject(Stream<Pupil> stream) {
         return stream.flatMap(s -> s.getSubjects().stream())
                 .collect(Collectors.groupingBy(Subject::getName,
-                        LinkedHashMap::new, Collectors.averagingDouble(
-                        Subject::getScore)))
+                        Collectors.averagingDouble(
+                                Subject::getScore)))
                 .entrySet().stream()
                 .map(s -> new Tuple(s.getKey(), s.getValue()))
                 .collect(Collectors.toList());
@@ -39,17 +38,17 @@ public class Analyze {
                         .mapToInt(Subject::getScore)
                         .sum())))
                 .max(Comparator.comparingDouble(Tuple::getScore))
-                .orElse(new Tuple("No tuple found", 0));
+                .orElse(null);
     }
 
     public static Tuple bestSubject(Stream<Pupil> stream) {
         return stream.flatMap(s -> s.getSubjects().stream())
                 .collect(Collectors.groupingBy(Subject::getName,
-                        LinkedHashMap::new, Collectors.summingDouble(
-                        Subject::getScore)))
+                        Collectors.summingDouble(
+                                Subject::getScore)))
                 .entrySet().stream()
                 .map(s -> new Tuple(s.getKey(), s.getValue()))
                 .max(Comparator.comparingDouble(Tuple::getScore))
-                .orElse(new Tuple("No tuple found", 0));
+                .orElse(null);
     }
 }
