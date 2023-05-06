@@ -1,10 +1,9 @@
-package ru.job4j.tracker_db.store;
+package ru.job4j.trackerdb.store;
 
-import ru.job4j.tracker_db.model.Item;
+import ru.job4j.trackerdb.model.Item;
 
 import java.io.InputStream;
 import java.sql.*;
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -67,7 +66,8 @@ public class SqlTracker implements Store {
     @Override
     public boolean replace(int id, Item item) {
         try (PreparedStatement statement =
-                     cn.prepareStatement("UPDATE public.items SET name = ?, created = ? WHERE id = ?;")) {
+                     cn.prepareStatement("UPDATE public.items "
+                             + "SET name = ?, created = ? WHERE id = ?;")) {
             statement.setInt(3, id);
             statement.setString(1, item.getName());
             statement.setTimestamp(2, Timestamp.valueOf(item.getCreated()));
