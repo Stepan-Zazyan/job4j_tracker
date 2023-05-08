@@ -37,6 +37,18 @@ public class SqlTracker implements Store {
         }
     }
 
+    private void addItemByStatement(List<Item> list, PreparedStatement statement) throws SQLException {
+        try (ResultSet rs = statement.executeQuery()) {
+            while (rs.next()) {
+                list.add(new Item(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getTimestamp("created").toLocalDateTime())
+                );
+            }
+        }
+    }
+
     @Override
     public void close() throws SQLException {
         if (cn != null) {
@@ -93,15 +105,7 @@ public class SqlTracker implements Store {
         List<Item> list = new ArrayList<>();
         try (PreparedStatement statement =
                      cn.prepareStatement("SELECT * from public.items;")) {
-            try (ResultSet rs = statement.executeQuery()) {
-                while (rs.next()) {
-                    list.add(new Item(
-                            rs.getInt("id"),
-                            rs.getString("name"),
-                            rs.getTimestamp("created").toLocalDateTime())
-                    );
-                }
-            }
+            addItemByStatement(list, statement);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
