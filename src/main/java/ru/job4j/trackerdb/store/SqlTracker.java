@@ -37,7 +37,8 @@ public class SqlTracker implements Store {
         }
     }
 
-    private void addItemByStatement(List<Item> list, PreparedStatement statement) throws SQLException {
+    private void addItemByStatement(
+            List<Item> list, PreparedStatement statement) throws SQLException {
         try (ResultSet rs = statement.executeQuery()) {
             while (rs.next()) {
                 list.add(new Item(
