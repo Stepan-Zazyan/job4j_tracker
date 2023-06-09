@@ -57,4 +57,47 @@ public class SqlTrackerTest {
         assertThat(tracker.findById(item.getId())).isEqualTo(item);
     }
 
+    @Test
+    public void whenReplaceItem() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item = new Item("itemToReplace");
+        tracker.add(item);
+        Item replacedItem = new Item("newItem");
+        tracker.replace(item.getId(), replacedItem);
+        assertThat(tracker.findById(item.getId()).getName()).isEqualTo("newItem");
+    }
+
+    @Test
+    public void whenDeleteItem() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item = new Item("itemToDelete");
+        tracker.add(item);
+        tracker.delete(item.getId());
+        assertThat(tracker.findById(item.getId()).getName()).isNull();
+    }
+
+    @Test
+    public void whenFindAll() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item1 = new Item("item1");
+        Item item2 = new Item("item2");
+        List<Item> list = List.of(item1, item2);
+        tracker.add(item1);
+        tracker.add(item2);
+        assertThat((tracker.findAll())).isEqualTo(list);
+    }
+
+    @Test
+    public void whenFindByName() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item1 = new Item("item");
+        Item item2 = new Item("item");
+        Item item3 = new Item("item3");
+        List<Item> list = List.of(item1, item2);
+        tracker.add(item1);
+        tracker.add(item2);
+        tracker.add(item3);
+        assertThat(tracker.findByName("item")).isEqualTo(list);
+    }
+
 }
