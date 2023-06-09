@@ -9,7 +9,7 @@ public class Item {
 
     private String name;
 
-    private LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime created = LocalDateTime.now().withNano(0);
 
     public Item() {
     }
@@ -22,7 +22,11 @@ public class Item {
     public Item(int id, String name, LocalDateTime created) {
         this.id = id;
         this.name = name;
-        this.created = created;
+        this.created = created.withNano(0);
+    }
+
+    public Item(String name) {
+        this.name = name;
     }
 
     public void setId(int id) {
