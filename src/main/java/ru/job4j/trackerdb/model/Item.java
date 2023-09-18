@@ -1,11 +1,14 @@
 package ru.job4j.trackerdb.model;
 
 import lombok.Data;
-
+import javax.persistence.*;
 import java.time.LocalDateTime;
+@Entity
+@Table(name = "items")
 @Data
 public class Item {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
