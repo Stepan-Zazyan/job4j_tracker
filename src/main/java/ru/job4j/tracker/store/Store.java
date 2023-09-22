@@ -8,15 +8,16 @@ import java.util.List;
 public interface Store {
     Item add(Item item);
 
-    boolean replace(int id, Item item);
+    boolean replace(Integer id, Item item);
 
-    boolean delete(int id);
+    boolean delete(Integer id);
 
     List<Item> findAll();
 
     List<Item> findByName(String name);
 
-    Item findById(int id);
+    Item findById(Integer id);
 
     void close()  throws SQLException;
+
 }
