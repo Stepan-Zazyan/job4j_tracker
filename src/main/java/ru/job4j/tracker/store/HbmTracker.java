@@ -70,8 +70,7 @@ public class HbmTracker implements Store, AutoCloseable {
         Session session = sf.openSession();
         List<Item> result = new ArrayList<>();
         try {
-            Query<Item> query = session
-                    .createQuery("from Item");
+            Query<Item> query = session.createQuery("from Item");
             result = new ArrayList<>(query.list());
         } catch (Exception e) {
             session.getTransaction().rollback();
