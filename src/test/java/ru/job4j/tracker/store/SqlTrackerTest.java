@@ -76,17 +76,6 @@ public class SqlTrackerTest {
     }
 
     @Test
-    public void whenFindAll() {
-        SqlTracker tracker = new SqlTracker(connection);
-        Item item1 = new Item("item1");
-        Item item2 = new Item("item2");
-        List<Item> list = List.of(item1, item2);
-        tracker.add(item1);
-        tracker.add(item2);
-        assertThat((tracker.findAll())).isEqualTo(list);
-    }
-
-    @Test
     public void whenFindByName() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item1 = new Item("item");
@@ -99,4 +88,14 @@ public class SqlTrackerTest {
         assertThat(tracker.findByName("item")).isEqualTo(list);
     }
 
+    @Test
+    public void whenFindAll() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item1 = new Item("item1");
+        Item item2 = new Item("item2");
+        List<Item> list = List.of(item1, item2);
+        tracker.add(item1);
+        tracker.add(item2);
+        assertThat((tracker.findAll())).isEqualTo(list);
+    }
 }
