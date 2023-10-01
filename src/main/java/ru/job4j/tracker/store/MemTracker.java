@@ -2,10 +2,11 @@ package ru.job4j.tracker.store;
 
 import ru.job4j.tracker.model.Item;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemTracker {
+public class MemTracker implements Store {
     private List<Item> items = new ArrayList<>();
     private int ids = 1;
 
@@ -15,9 +16,14 @@ public class MemTracker {
         return item;
     }
 
-    public Item findById(int id) {
+    public Item findById(Integer id) {
         int index = indexOf(id);
         return (index != -1) ? items.get(index) : null;
+    }
+
+    @Override
+    public void close() throws SQLException {
+
     }
 
     public List<Item> findAll() {
@@ -45,7 +51,7 @@ public class MemTracker {
         return rsl;
     }
 
-    public boolean replace(int id, Item item) {
+    public boolean replace(Integer id, Item item) {
         int index = indexOf(id);
         boolean rsl = index != -1;
         if (rsl) {
@@ -65,7 +71,7 @@ public class MemTracker {
         return items;
     }*/
 
-    public boolean delete(int id) {
+    public boolean delete(Integer id) {
         int index = indexOf(id);
         boolean rsl = index != -1;
         if (rsl) {
@@ -73,4 +79,5 @@ public class MemTracker {
         }
         return rsl;
     }
+
 }
