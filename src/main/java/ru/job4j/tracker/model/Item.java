@@ -31,7 +31,6 @@ public class Item {
     )
     private List<User> participates = new ArrayList<>();
 
-
     public Item(int id, String name, LocalDateTime created) {
         this.id = id;
         this.name = name;
@@ -42,6 +41,7 @@ public class Item {
         this.name = name;
         this.created = created;
     }
+
     public Item(String name) {
         this.name = name;
     }

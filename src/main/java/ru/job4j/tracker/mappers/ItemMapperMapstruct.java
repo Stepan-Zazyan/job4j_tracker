@@ -7,8 +7,9 @@ import ru.job4j.tracker.model.Item;
 
 @Mapper
 public interface ItemMapperMapstruct {
-    @Mapping(target="expired", source="created")
+    @Mapping(target = "expired", source = "created")
     ItemDto getModelFromEntity(Item item);
-    @Mapping(target="created", source="expired")
+
+    @Mapping(target = "created", source = "expired")
     Item getEntityFromDto(ItemDto itemDto);
 }
