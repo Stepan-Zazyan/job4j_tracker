@@ -1,7 +1,7 @@
 package ru.job4j.tracker.model;
 
 import lombok.*;
-import ru.job4j.toone.User;
+import ru.job4j.tracker.toone.User;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
